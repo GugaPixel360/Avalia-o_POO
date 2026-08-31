@@ -7,13 +7,27 @@ class Filme
     public string Nome
     {
         get { return nome; }
-        set { nome = value; }
+        set { 
+            if (nome == "")
+            {
+                Console.WriteLine("Nome inválido! Campo vazio");
+                return;
+            }
+            
+            nome = value; }
     }
 
     public string Genero
     {
         get { return genero; }
-        set { genero = value; }
+        set { 
+            if (genero == "")
+            {
+                Console.WriteLine("Gênero inválido! Campo vazio");
+                return;
+            }
+            
+            genero = value; }
     }
 
     public int Duracao
@@ -34,5 +48,17 @@ class Filme
     public override string ToString()
     {
         return $"Filme: {nome} | Gênero: {genero} | Duração: {duracao} minutos";
+    }
+
+    public void IsLongo()
+    {
+        if (duracao > 120)
+        {
+            Console.WriteLine("O filme é longo. :)");
+        }
+        else
+        {
+            Console.WriteLine("O filme não é longo. :)");
+        }
     }
 } 
