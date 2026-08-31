@@ -2,12 +2,12 @@ class PlayList
 {
     private List<Musica> musicas;
 
-    private string? nomemusica;
+    private string? nomePlaylist;
 
-    public string NomeMusica
+    public string NomePlaylist
     {
-        get { return nomemusica; }
-        set { nomemusica = value; }
+        get { return nomePlaylist; }
+        set { nomePlaylist = value; }
     } 
 
     public List<Musica> Musicas
@@ -16,9 +16,19 @@ class PlayList
         set { musicas = value; }
     }
 
-    public PlayList(string nomeMusica)
+    public PlayList(string nomePlaylist)
     {
-        this.nomemusica = nomeMusica;
+        this.nomePlaylist = nomePlaylist;
         this.musicas = new List<Musica>();
+    }
+
+    public void AdicionarMusica(Musica musica)
+    {
+        musicas.Add(musica);
+    }
+
+    public override string ToString()
+    {
+        return $"PlayList: {nomePlaylist} | Músicas: {musicas}";
     }
 }   
